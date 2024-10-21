@@ -36,15 +36,14 @@ let reset = paramReset;
 if (secret === guess){
   console.log("Access is granted!");
 }
-else if (guess===forgot){
-  console.log("Here's a hint!");
+
+else {
+  console.log("Access Denied! :(")
 }
-else if (guess===reset){
-  console.log("Let's reset your account!");
-}
-else if (secret !== guess) {
-  console.log("Access denied :(");
-}
+
+
+
+
 
 
   //write your code here
@@ -53,7 +52,7 @@ else if (secret !== guess) {
 //CHALLENGE FUNCTION
 
 
-function StartApp(){
+/* function StartApp(){
   readline.question('Welcome back to your computer! Please set your password', secret => {
     readline.question('Please enter your password to unlock your computer', guess => {
 
@@ -64,10 +63,40 @@ function StartApp(){
         StartApp();
       } else {
         Password (secret, guess)
-        StartGame
+        StartApp();
+      
       }
     });
   });
 }
 
+
+StartApp(); */
+
+
+function MakeQuestion (){
+  readline.question("Welcome to your new computer! Please set a password!", (_secret) => {
+    function StartApp(){
+
+  readline.question("Please enter your password to log in!", (guess) => {
+
+    if (guess === "quit") {
+      readline.close();
+    }
+  
+    if (guess ==="forgot")
+      console.log ("here's a hint!")
+    StartApp();
+   
+   if (guess === "reset"){
+      console.log("let's reset your password!")
+      StartApp();
+    }
+  });
+}
 StartApp();
+  } 
+)}
+
+
+MakeQuestion();
