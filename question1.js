@@ -23,6 +23,25 @@ if secret === forgot tells the user "here is a hint"
 if secret === reset tells the user "let's reset your account"
 Write the question for the password "Welcome back to your computer! Please set your password"
 Write question to get the user to type the password "Please enter your password to unlock your computer"
+
+FOR CHALLENGE!!!
+if(_secret. length =< 5){
+console.log("Password is inadequate");
+}
+^^ so if the password is less than five it should fail
+
+if (secret = "forgot"){
+console.log("This password you set should not be used because it glitches the system");}
+
+^^ if the user types "forgot" it should say correct but also that it shouldn't be used
+
+if (secret= "reset"){
+console.log ("This password you set should not be used because it glitches the system");}
+
+^^same here
+
+
+
  */
 
 //determine a proper function name and parameter variable name
@@ -47,7 +66,14 @@ else {
   console.log("Access Denied! :(")
 }
 
+if (secret === "forgot"){
+  console.log("This password you set should not be used because it glitches the system");
+}
 
+if(secret === "reset"){
+  console.log ("This password you set should not be used because it glitches the system");
+}
+  
 
 
 
@@ -82,17 +108,25 @@ StartApp(); */
 
 
 function MakeQuestion (){
-  readline.question("Welcome to your new computer! Please set a password!", (_secret) => {
+  readline.question("Welcome to your new computer! Please set a password!", (secret) => {
+    if(secret.length < 5){
+      console.log("Password is inadequate"); 
+      MakeQuestion();
+    }
+    else {
+    StartApp ();
+    }
     function StartApp(){
-
+    
   readline.question("Please enter your password to log in!", (guess) => {
 
     if (guess === "quit") {
       readline.close();
     }
     
+    
     else {
-      Password (_secret,guess)
+      Password (secret,guess)
       StartApp();
     }
   });
