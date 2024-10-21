@@ -50,10 +50,10 @@ function Lunch(paramlunchmoney, paramlunchcost,paramname, paramitem){
 }
 
 function StartApp(){
-  readline.question('Write a proper question to get the student name', name => {
-    readline.question('Write a proper question to get the amount of lunch money', money => {
-      readline.question('Write a proper question to get lunch item name', item => {
-        readline.question('Write a proper question to get lunch item costs', cost => {
+  readline.question('What is your name?', name => {
+    readline.question('How much lunch money do you have?', money => {
+      readline.question('What item would you like to buy for lunch?', item => {
+        readline.question('How much does it cost?', cost => {
 
           //call your function here.
           Lunch(Number(money), Number(cost), name, item);
