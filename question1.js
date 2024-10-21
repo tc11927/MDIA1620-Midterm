@@ -26,20 +26,27 @@ Write question to get the user to type the password "Please enter your password 
  */
 
 //determine a proper function name and parameter variable name
-function Password(paramSecret, paramGuess, paramForgot, paramReset){
+function Password(paramSecret, paramGuess){
 
 let secret = paramSecret;
 let guess = paramGuess;
-let forgot = paramForgot;
-let reset = paramReset;
+
 
 if (secret === guess){
   console.log("Access is granted!");
 }
 
+else if(guess === "forgot"){
+  console.log ("Here's a hint!")
+}
+else if (guess === "reset"){
+  console.log ("Let's reset your account")
+}
+
 else {
   console.log("Access Denied! :(")
 }
+
 
 
 
@@ -83,13 +90,9 @@ function MakeQuestion (){
     if (guess === "quit") {
       readline.close();
     }
-  
-    if (guess ==="forgot")
-      console.log ("here's a hint!")
-    StartApp();
-   
-   if (guess === "reset"){
-      console.log("let's reset your password!")
+    
+    else {
+      Password (_secret,guess)
       StartApp();
     }
   });
