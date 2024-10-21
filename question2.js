@@ -32,8 +32,8 @@ Question 1: Please input your name for exam results!
 Question 2: Please input your grade to determine your letter grade!
 */
 function GradeChecker(paramName, paramResult){
-  let name = paramName
-  let result = paramResult
+  let name = paramName;
+  let result = paramResult;
 
   if(result < 50){
     console.log ("Fail. "+name+" has an F.");
