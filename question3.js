@@ -24,6 +24,7 @@ CHALLENGE (SAVE FOR LAST):
 If lunchcost =< lunchmoney "[student name] purchased [lunch item] purchased!"
 If lunchcost >= lunchmoney "[student name] does not have sufficient funds to buy [lunch item]!"
 make variables: lunchcost, lunchmoney, item, name
+make questions: what is your name, how much money do you have, what would you like to purchase, and how much does it cost?
 
 */
 
