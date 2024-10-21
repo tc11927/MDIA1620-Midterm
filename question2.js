@@ -36,23 +36,23 @@ function GradeChecker(paramName, paramResult){
   let result = paramResult
 
   if(result < 50){
-    console.log ("Fail. "+Name+" has an F.");
+    console.log ("Fail. "+name+" has an F.");
   }
 
   else if(result >=50 && result <=60){
-  console.log("Need improvement. "+Name+" has a D.");
+  console.log("Need improvement. "+name+" has a D.");
 }
 
-  else if (results >=60 && results<= 72) {
-    console.log ("Good effort! "+Name+" has a C.");
+  else if (result >=60 && result<= 72) {
+    console.log ("Good effort! "+name+" has a C.");
   }
 
-  else if(result >=75 && result <= 85){
-    console.log ("Great job! "+Name+" has a B.");
+  else if(result >=72 && result <= 85){
+    console.log ("Great job! "+name+" has a B.");
   }
 
-  else if (result > 86){
-    console.log ("Excellent! "+Name+" has an A.");
+  else if (result >= 86){
+    console.log ("Excellent! "+name+" has an A.");
   }
 
   
@@ -61,10 +61,14 @@ function GradeChecker(paramName, paramResult){
   //write your code here
 }
 
-function StartApp(){
-  readline.question('Write a proper question to get the student name', name => {
-    readline.question('Write a proper question to get student score', result => {
-      GradeChecker(Number(results), name);
+/*
+function MakeQuestion(){
+  readline.question('Please input your name for exam results!', name => {
+
+    function StartApp (){
+
+    readline.question("Please input your grade to determine your letter grade!", result => {
+      GradeChecker(Number(result), name);
 
       //call your function here.
 
@@ -72,10 +76,36 @@ function StartApp(){
       if(result !== "quit"){
         StartApp();
       } else {
-        readline.close();
+         GradeChecker (name,result)
+          StartApp();
       }
     });
+    StartApp();
+  } 
   });
 }
 
-StartApp();
+MakeQuestion(); */
+
+
+function MakeQuestion (){
+  readline.question('Please input your name for exam results!', name => {
+    function StartApp (){
+
+    readline.question("Please input your grade to determine your letter grade!", result => {
+        GradeChecker(Number(result), name);
+      
+      if (result === "quit"){
+        readline.close();
+      }
+      else {
+        GradeChecker (name, result)
+        StartApp ();
+      }
+    });
+    }
+    StartApp();
+})
+  }
+
+  MakeQuestion();
